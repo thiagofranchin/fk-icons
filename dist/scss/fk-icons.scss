@@ -1,0 +1,62 @@
+@font-face {
+	font-family: "fk-icons";
+	src: url('#{$fk-font-path}fk-icons.eot');
+	src: url('#{$fk-font-path}fk-icons.eot?#iefix') format('eot'),
+		url('#{$fk-font-path}fk-icons.woff2') format('woff2'),
+		url('#{$fk-font-path}fk-icons.woff') format('woff'),
+		url('#{$fk-font-path}fk-icons.ttf') format('truetype'),
+		url('#{$fk-font-path}fk-icons.svg#fk-icons') format('svg');
+}
+
+@mixin fk-styles {
+	font-family: "fk-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%fk {
+	@include fk-styles;
+}
+
+@function fk-char($filename) {
+	$char: "";
+
+	@if $filename == logo {
+		$char: "\E001";
+	}
+	@if $filename == garrafa-vazia {
+		$char: "\E002";
+	}
+	@if $filename == github {
+		$char: "\E003";
+	}
+
+	@return $char;
+}
+
+@mixin fk($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %fk;
+		} @else {
+			@include fk-styles;
+		}
+		content: fk-char($filename);
+	}
+}
+
+.fk-logo {
+	@include fk(logo);
+}
+.fk-garrafa-vazia {
+	@include fk(garrafa-vazia);
+}
+.fk-github {
+	@include fk(github);
+}

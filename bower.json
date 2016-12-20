@@ -1,0 +1,21 @@
+{
+  "name": "fk-icons",
+  "description": "Thiago Franchin ícones",  
+  "authors": [
+    "Thiago Franchin"
+  ],
+  "license": "ISC",
+  "keywords": [        
+    "fonts",
+    "icons",
+    "fk"
+  ],
+  "homepage": "https://github.com/repositorio",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

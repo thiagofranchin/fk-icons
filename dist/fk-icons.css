@@ -1,0 +1,34 @@
+@font-face {
+	font-family: "fk-icons";
+	src: url('fonts/fk-icons.eot');
+	src: url('fonts/fk-icons.eot?#iefix') format('eot'),
+		url('fonts/fk-icons.woff2') format('woff2'),
+		url('fonts/fk-icons.woff') format('woff'),
+		url('fonts/fk-icons.ttf') format('truetype'),
+		url('fonts/fk-icons.svg#fk-icons') format('svg');
+}
+
+.fk:before {
+	font-family: "fk-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.fk-logo:before {
+	content: "\E001";
+}
+
+.fk-garrafa-vazia:before {
+	content: "\E002";
+}
+
+.fk-github:before {
+	content: "\E003";
+}
